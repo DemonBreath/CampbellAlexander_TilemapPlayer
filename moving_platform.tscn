@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://c8miv67p2sjj4"]
+
+[ext_resource type="Texture2D" uid="uid://26lw2tryl80" path="res://2D Resources/tilesets/props.png" id="1_q06lf"]
+
+[sub_resource type="Animation" id="Animation_qj1aa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 91)]
+}
+
+[sub_resource type="Animation" id="Animation_tc1kf"]
+resource_name = "move"
+length = 13.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6.4666667, 12.933333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 91), Vector2(1412, 91), Vector2(0, 91)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u78fj"]
+_data = {
+&"RESET": SubResource("Animation_qj1aa"),
+&"move": SubResource("Animation_tc1kf")
+}
+
+[node name="MovingPlatform" type="AnimatableBody2D" unique_id=694492416]
+rotation = 3.1363351
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=688681168]
+texture = ExtResource("1_q06lf")
+region_enabled = true
+region_rect = Rect2(112.5417, 28.644676, 120.210434, 105.184135)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=458950661]
+polygon = PackedVector2Array(-4, -48, -32, -31, -53, -11, -55, -7, -47, 1, -29, 12, -21, 11, -14, 19, -9, 19, -5, 22, -9, 28, -16, 30, -16, 35, -16, 39, -14, 41, -14, 45, -14, 47, 16, 47, 21, 40, 17, 32, 13, 29, 10, 20, 20, 15, 30, 10, 40, 3, 51, -9, 51, -21, 41, -30, 41, -30, 40, -30, 26, -36, 17, -39, 13, -46, 5, -48)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=32588687]
+libraries/ = SubResource("AnimationLibrary_u78fj")

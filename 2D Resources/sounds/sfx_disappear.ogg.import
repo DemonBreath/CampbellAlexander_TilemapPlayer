@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ciqgpntysxmsf"
+path="res://.godot/imported/sfx_disappear.ogg-7da44e46cf8a2b3198729716bc227d39.oggvorbisstr"
+
+[deps]
+
+source_file="res://2D Resources/sounds/sfx_disappear.ogg"
+dest_files=["res://.godot/imported/sfx_disappear.ogg-7da44e46cf8a2b3198729716bc227d39.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
